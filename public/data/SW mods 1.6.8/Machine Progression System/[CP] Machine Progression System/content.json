@@ -1,0 +1,95 @@
+{
+    "Format": "2.0.0",
+	
+	"ConfigSchema": 
+		{
+			"Difficulty": 
+				{
+					"AllowValues": "default, balanced, hard",
+					"Default": "default",
+				},	
+			"Sprites": 
+				{
+					"AllowValues": "default, desaturated, Gwen's Medieval Craftables ft plaidbees with vines, Gwen's Medieval Craftables ft plaidbees with no vines",
+					"Default": "default",
+				}
+		},
+
+    "Changes": [
+	
+	    // This adds the MPS Objects
+
+        {
+            "LogName": "MPS Objects",
+            "Action": "Include",
+            "FromFile": "Data/objects.json",
+        },
+
+        // This adds the MPS Crafting Recipes
+
+        {
+            "LogName": "Crafting Recipes",
+            "Action": "Include",
+            "FromFile": "Data/recipes.json",
+			"When": {"Difficulty": "default"}
+        },
+		
+		{
+            "LogName": "Crafting Recipes",
+            "Action": "Include",
+            "FromFile": "Data/recipes_balanced.json",
+			"When": {"Difficulty": "balanced"}
+        },
+		
+		{
+            "LogName": "Crafting Recipes",
+            "Action": "Include",
+            "FromFile": "Data/recipes_hard.json",
+			"When": {"Difficulty": "hard"}
+        },
+		
+		// This adds the MPS Sprites
+
+		{
+			"LogName": "Load MPS Sprites",
+			"Action": "Load",
+			"Target": "{{ModId}}/BigCraftables",
+			"FromFile": "assets/BigCraftables/Craftables.png",
+			"When": {"Sprites": "default"}
+		},
+		{
+			"LogName": "Load MPS Sprites",
+			"Action": "Load",
+			"Target": "{{ModId}}/BigCraftables",
+			"FromFile": "assets/BigCraftables/CraftablesDesaturated.png",
+			"When": {"Sprites": "desaturated"}
+		},
+		{
+			"LogName": "Load MPS Sprites",
+			"Action": "Load",
+			"Target": "{{ModId}}/BigCraftables",
+			"FromFile": "assets/BigCraftables/CraftablesGwenPlaidbeesVines.png",
+			"When": {"Sprites": "Gwen's Medieval Craftables ft plaidbees with vines"}
+		},
+		{
+			"LogName": "Load MPS Sprites",
+			"Action": "Load",
+			"Target": "{{ModId}}/BigCraftables",
+			"FromFile": "assets/BigCraftables/CraftablesGwenPlaidbeesNoVines.png",
+			"When": {"Sprites": "Gwen's Medieval Craftables ft plaidbees with no vines"}
+		},
+
+        // This adds the MPS Machine Rules
+
+        {
+            "LogName": "Machine Rules",
+            "Action": "Include",
+            "FromFile": "Data/machines.json",
+        },
+        {
+            "LogName": "Compatibility Patches",
+            "Action": "Include",
+            "FromFile": "Data/compatibilitypatches.json",
+        }
+    ]
+}

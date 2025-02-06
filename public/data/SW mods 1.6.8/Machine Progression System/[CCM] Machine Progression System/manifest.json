@@ -1,0 +1,17 @@
+﻿{
+	"Name": "[CCM] Machine Progression System",
+	"Author": "NachOnline",
+	"Version": "1.0.0",
+	"Description": "Adds configuration of my cask data to Custom Cask Mod.",
+	"UniqueID": "nachonline.mpscask",
+	"MinimumApiVersion": "4.0.0",
+	"UpdateKeys": [],
+	"Dependencies": [
+		{
+			"UniqueID": "nachonline.mps"
+		}
+	],
+	"ContentPackFor": {
+		"UniqueID": "DIGUS.CustomCaskMod"
+	}
+}

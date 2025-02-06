@@ -1,0 +1,11 @@
+{
+  "Name": "BigFishPond",
+  "Author": "Keisan28",
+  "Version": "1.5.0",
+  "Description": "Bigger Fish Pond to extend endgame fishing",
+  "UniqueID": "Keisan28.BigFishPond",
+  "UpdateKeys": ["NEXUS:28184"],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

@@ -1,0 +1,15 @@
+﻿{
+	"Name": "[PFM] Machine Progression System",
+	"Author": "NachOnline",
+	"Version": "1.0.0",
+	"Description": "Adds producing rules for my kegs and lightning rods.",
+	"UniqueID": "nachonline.mpspfm",
+	"MinimumApiVersion": "3.0.0",
+	"UpdateKeys": [],
+	"Dependencies": [
+		{"UniqueID": "nachonline.mps", "IsRequired": true}
+	],
+	"ContentPackFor": {
+		"UniqueID": "DIGUS.ProducerFrameworkMod"
+	}
+}

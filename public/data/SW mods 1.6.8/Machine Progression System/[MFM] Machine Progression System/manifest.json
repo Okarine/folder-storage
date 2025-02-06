@@ -1,0 +1,18 @@
+﻿{
+	"Name": "[MFM] Machine Progression System",
+	"Author": "NachOnline",
+	"Version": "1.0.0",
+	"Description": "Adds custom mails for my mod.",
+	"UniqueID": "nachonline.mpsmfm",
+	"MinimumApiVersion": "4.0.0",
+	"UpdateKeys": [],
+	"Dependencies": [
+		{
+			"UniqueID": "nachonline.mps"
+		}
+	],
+	"ContentPackFor": {
+		"UniqueID": "DIGUS.MailFrameworkMod",
+        "MinimumVersion": "1.16.0-alpha"
+	}
+}

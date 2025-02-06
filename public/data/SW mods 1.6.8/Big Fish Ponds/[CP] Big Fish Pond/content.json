@@ -1,0 +1,23 @@
+{
+  "Format":  "2.0.0",
+  "Changes": [
+
+    {
+      "LogName": "Building data and textures",
+      "Action": "Include",
+      "FromFile": "Data/BigFishPondBuilding.json"
+    },
+
+    {
+      "LogName": "Updating Fish Pond data for population above 10",
+      "Action": "Include",
+      "FromFile": "Data/BigFishPondPopulation.json"
+    },
+
+    {
+      "LogName": "Adding compatibility with other mods for population above 10",
+      "Action": "Include",
+      "FromFile": "Data/Compatibility.json"
+    }
+  ]
+}

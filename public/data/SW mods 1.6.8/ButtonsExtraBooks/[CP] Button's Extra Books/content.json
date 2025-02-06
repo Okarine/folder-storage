@@ -1,0 +1,101 @@
+{
+    "Format": "2.0.0",
+    "Changes": [
+		// TRANSLATIONS //
+		{
+			"Action": "Load",
+			"FromFile": "{{FirstValidFile: i18n/{{language}}.json, i18n/default.json }}",
+			"Target": "Mods/{{ModId}}/Translations/{{language}}"
+		},
+
+		{
+			"Action": "Load",
+			"FromFile": "i18n/default.json",
+			"Target": "Mods/{{ModId}}/Translations/default",
+			"Priority": "High"
+		},
+	
+		// TEXTURES //
+		{
+			"Action": "Load",
+			"FromFile": "assets/Books/sheet.png",
+			"Target": "Mods/{{ModId}}/Books"
+		},
+		
+		{
+			"Action": "Load",
+			"FromFile": "assets/Letters/junimoLetterBG.png",
+			"Target": "Mods/{{ModId}}/Letters/junimoLetterBG"
+		},
+		
+		{
+			"Action": "Load",
+			"FromFile": "assets/Icons/PowersTab.png",
+			"Target": "Mods/{{ModId}}/Icons/PowersTab"
+		},
+		
+		// POWERS //
+		{
+			"Action": "Include",
+			"FromFile": "patches/powers.json"
+		},
+		
+		// BOOK ITEMS //
+		{
+			"Action": "Include",
+			"FromFile": "patches/books.json"
+		},
+		
+		// SHOP EDITS //
+		{
+			"Action": "Include",
+			"FromFile": "patches/shops.json"
+		},
+
+		// ITEM EDITS //
+		{
+			"Action": "Include",
+			"FromFile": "patches/items.json"
+		},
+
+		// ITEM EDITS //
+		{
+			"Action": "Include",
+			"FromFile": "patches/mail.json"
+		},
+		
+		// DIALOGUE //
+		{
+			"Action": "EditData",
+			"Target": "Strings/StringsFromCSFiles",
+			"Entries": {
+				"NPC.cs.3987": "{{i18n: Dialogue.EnoughGifts}}"
+			},
+			"When": {
+				"Spiderbuttons.ButtonsExtraBooksCore/ConfigEnableExtraGifts": true
+			}
+		},
+		
+		// ARTIFACT SPOTS //
+		{
+			"Action": "EditData",
+			"Target": "Data/Locations",
+			"TargetField": [ "Default", "ArtifactSpots" ],
+			"Entries": {
+				"{{ModId}}_Sketchbook": {
+					"Chance": 0.05,
+					"Condition": "!PLAYER_STAT Current {{ModId}}_Book_Sketchbook 1",
+					"ItemId": "{{ModId}}_Book_Sketchbook"
+				},
+				"{{ModId}}_SketchbookDrops": {
+					"Chance": 0.05,
+					"Condition": "PLAYER_STAT Current {{ModId}}_Book_Sketchbook 1",
+					"RandomItemId": [ "(O)74", "(O)166", "(O)797", "(O)534", "(O)533", "(O)852", "(O)856", "(O)872" ]
+				}
+			},
+			"When": {
+				"Spiderbuttons.ButtonsExtraBooksCore/ConfigEnableSketchbook": true
+			},
+		},
+    ]
+}

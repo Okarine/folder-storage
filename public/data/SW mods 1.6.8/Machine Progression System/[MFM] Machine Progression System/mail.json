@@ -1,0 +1,1130 @@
+[
+	{
+		"Id": "mpsmfm.IntroLetter",
+		"Title": "mps.intro.title",
+		"Text": "mps.intro.letter",
+		"Date": "1 spring Y1",
+	},
+	{
+		"Id": "mpsmfm.BaitMaker",
+		"Text": "BaitMaker.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 6 }
+		]
+	},
+	{
+		"Id": "mpsmfm.GoldBaitMaker",
+		"Recipe": "nachonline.mps_GoldBaitMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondBaitMaker",
+		"Recipe": "nachonline.mps_DiamondBaitMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumBaitMaker",
+		"Recipe": "nachonline.mps_IridiumBaitMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveBaitMaker",
+		"Recipe": "nachonline.mps_RadioactiveBaitMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticBaitMaker",
+		"Recipe": "nachonline.mps_PrismaticBaitMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.BeeHouse",
+		"Text": "BeeHouse.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 3 }
+		]
+	},
+	{
+		"Id": "mpsmfm.GoldBeeHouse",
+		"Recipe": "nachonline.mps_GoldBeeHouse",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 3 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondBeeHouse",
+		"Recipe": "nachonline.mps_DiamondBeeHouse",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 3 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumBeeHouse",
+		"Recipe": "nachonline.mps_IridiumBeeHouse",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 3 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveBeeHouse",
+		"Recipe": "nachonline.mps_RadioactiveBeeHouse",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 3 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticBeeHouse",
+		"Recipe": "nachonline.mps_PrismaticBeeHouse",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 3 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.BoneMill",
+		"Text": "BoneMill.letter",
+		"RecipeKnown": ["Bone Mill"],
+	},
+	{
+		"Id": "mpsmfm.DiamondBoneMill",
+		"Recipe": "nachonline.mps_DiamondBoneMill",
+		"RecipeKnown": ["Bone Mill"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumBoneMill",
+		"Recipe": "nachonline.mps_IridiumBoneMill",
+		"RecipeKnown": ["Bone Mill"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveBoneMill",
+		"Recipe": "nachonline.mps_RadioactiveBoneMill",
+		"RecipeKnown": ["Bone Mill"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticBoneMill",
+		"Recipe": "nachonline.mps_PrismaticBoneMill",
+		"RecipeKnown": ["Bone Mill"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.Cask",
+		"Text": "Cask.letter",
+		"RecipeKnown": ["Cask"],
+	},
+	{
+		"Id": "mpsmfm.GoldCask",
+		"Recipe": "nachonline.mps_GoldCask",
+		"RecipeKnown": ["Cask"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondCask",
+		"Recipe": "nachonline.mps_DiamondCask",
+		"RecipeKnown": ["Cask"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumCask",
+		"Recipe": "nachonline.mps_IridiumCask",
+		"RecipeKnown": ["Cask"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveCask",
+		"Recipe": "nachonline.mps_RadioactiveCask",
+		"RecipeKnown": ["Cask"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticCask",
+		"Recipe": "nachonline.mps_PrismaticCask",
+		"RecipeKnown": ["Cask"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.CharcoalKiln",
+		"Text": "CharcoalKiln.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 2 }
+		]
+	},
+	{
+		"Id": "mpsmfm.SteelCharcoalKiln",
+		"Recipe": "nachonline.mps_SteelCharcoalKiln",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.GoldCharcoalKiln",
+		"Recipe": "nachonline.mps_GoldCharcoalKiln",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondCharcoalKiln",
+		"Recipe": "nachonline.mps_DiamondCharcoalKiln",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumCharcoalKiln",
+		"Recipe": "nachonline.mps_IridiumCharcoalKiln",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveCharcoalKiln",
+		"Recipe": "nachonline.mps_RadioactiveCharcoalKiln",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticCharcoalKiln",
+		"Recipe": "nachonline.mps_PrismaticCharcoalKiln",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.CheesePress",
+		"Text": "CheesePress.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 6 }
+		]
+	},
+	{
+		"Id": "mpsmfm.GoldCheesePress",
+		"Recipe": "nachonline.mps_GoldCheesePress",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondCheesePress",
+		"Recipe": "nachonline.mps_DiamondCheesePress",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumCheesePress",
+		"Recipe": "nachonline.mps_IridiumCheesePress",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveCheesePress",
+		"Recipe": "nachonline.mps_RadioactiveCheesePress",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticCheesePress",
+		"Recipe": "nachonline.mps_PrismaticCheesePress",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.Crystalarium",
+		"Text": "Crystalarium.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Mining", "SkillLevel": 9 }
+		]
+	},
+	{
+		"Id": "mpsmfm.RadioactiveCrystalarium",
+		"Recipe": "nachonline.mps_RadioactiveCrystalarium",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Mining", "SkillLevel": 9 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticCrystalarium",
+		"Recipe": "nachonline.mps_PrismaticCrystalarium",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Mining", "SkillLevel": 9 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.Dehydrator",
+		"Text": "Dehydrator.letter",
+		"RecipeKnown": ["Dehydrator"],
+	},
+	{
+		"Id": "mpsmfm.GoldDehydrator",
+		"Recipe": "nachonline.mps_GoldDehydrator",
+		"RecipeKnown": ["Dehydrator"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondDehydrator",
+		"Recipe": "nachonline.mps_DiamondDehydrator",
+		"RecipeKnown": ["Dehydrator"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumDehydrator",
+		"Recipe": "nachonline.mps_IridiumDehydrator",
+		"RecipeKnown": ["Dehydrator"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveDehydrator",
+		"Recipe": "nachonline.mps_RadioactiveDehydrator",
+		"RecipeKnown": ["Dehydrator"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticDehydrator",
+		"Recipe": "nachonline.mps_PrismaticDehydrator",
+		"RecipeKnown": ["Dehydrator"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DeluxeWormBin",
+		"Text": "DeluxeWormBin.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 8 }
+		]
+	},
+	{
+		"Id": "mpsmfm.DiamondDeluxeWormBin",
+		"Recipe": "nachonline.mps_DiamondDeluxeWormBin",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumDeluxeWormBin",
+		"Recipe": "nachonline.mps_IridiumDeluxeWormBin",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveDeluxeWormBin",
+		"Recipe": "nachonline.mps_RadioactiveDeluxeWormBin",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticDeluxeWormBin",
+		"Recipe": "nachonline.mps_PrismaticDeluxeWormBin",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.FishSmoker",
+		"Text": "FishSmoker.letter",
+		"RecipeKnown": ["Fish Smoker"],
+	},
+	{
+		"Id": "mpsmfm.GoldFishSmoker",
+		"Recipe": "nachonline.mps_GoldFishSmoker",
+		"RecipeKnown": ["Fish Smoker"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondFishSmoker",
+		"Recipe": "nachonline.mps_DiamondFishSmoker",
+		"RecipeKnown": ["Fish Smoker"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumFishSmoker",
+		"Recipe": "nachonline.mps_IridiumFishSmoker",
+		"RecipeKnown": ["Fish Smoker"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveFishSmoker",
+		"Recipe": "nachonline.mps_RadioactiveFishSmoker",
+		"RecipeKnown": ["Fish Smoker"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticFishSmoker",
+		"Recipe": "nachonline.mps_PrismaticFishSmoker",
+		"RecipeKnown": ["Fish Smoker"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.Furnace",
+		"Text": "Furnace.letter",
+		"RecipeKnown": ["Furnace"],
+	},
+	{
+		"Id": "mpsmfm.SteelFurnace",
+		"Recipe": "nachonline.mps_SteelFurnace",
+		"RecipeKnown": ["Furnace"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.GoldFurnace",
+		"Recipe": "nachonline.mps_GoldFurnace",
+		"RecipeKnown": ["Furnace"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondFurnace",
+		"Recipe": "nachonline.mps_DiamondFurnace",
+		"RecipeKnown": ["Furnace"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumFurnace",
+		"Recipe": "nachonline.mps_IridiumFurnace",
+		"RecipeKnown": ["Furnace"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.HeavyFurnace",
+		"Text": "HeavyFurnace.letter",
+		"RecipeKnown": ["Heavy Furnace"],
+	},
+	{
+		"Id": "mpsmfm.RadioactiveHeavyFurnace",
+		"Recipe": "nachonline.mps_RadioactiveHeavyFurnace",
+		"RecipeKnown": ["Heavy Furnace"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticHeavyFurnace",
+		"Recipe": "nachonline.mps_PrismaticHeavyFurnace",
+		"RecipeKnown": ["Heavy Furnace"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.HeavyTapper",
+		"Text": "HeavyTapper.letter",
+		"RecipeKnown": ["Heavy Tapper"],
+	},
+	{
+		"Id": "mpsmfm.PrismaticHeavyTapper",
+		"Recipe": "nachonline.mps_PrismaticHeavyTapper",
+		"RecipeKnown": ["Heavy Tapper"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.Keg",
+		"Text": "Keg.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 8 }
+		]
+	},
+	{
+		"Id": "mpsmfm.GoldKeg",
+		"Recipe": "nachonline.mps_GoldKeg",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondKeg",
+		"Recipe": "nachonline.mps_DiamondKeg",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumKeg",
+		"Recipe": "nachonline.mps_IridiumKeg",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveKeg",
+		"Recipe": "nachonline.mps_RadioactiveKeg",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticKeg",
+		"Recipe": "nachonline.mps_PrismaticKeg",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.LightningRod",
+		"Text": "LightningRod.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 6 }
+		]
+	},
+	{
+		"Id": "mpsmfm.GoldLightningRod",
+		"Recipe": "nachonline.mps_GoldLightningRod",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondLightningRod",
+		"Recipe": "nachonline.mps_DiamondLightningRod",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumLightningRod",
+		"Recipe": "nachonline.mps_IridiumLightningRod",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveLightningRod",
+		"Recipe": "nachonline.mps_RadioactiveLightningRod",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticLightningRod",
+		"Recipe": "nachonline.mps_PrismaticLightningRod",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.Loom",
+		"Text": "Loom.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 7 }
+		]
+	},
+	{
+		"Id": "mpsmfm.SteelLoom",
+		"Recipe": "nachonline.mps_SteelLoom",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 7 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.GoldLoom",
+		"Recipe": "nachonline.mps_GoldLoom",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 7 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondLoom",
+		"Recipe": "nachonline.mps_DiamondLoom",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 7 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumLoom",
+		"Recipe": "nachonline.mps_IridiumLoom",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 7 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveLoom",
+		"Recipe": "nachonline.mps_RadioactiveLoom",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 7 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticLoom",
+		"Recipe": "nachonline.mps_PrismaticLoom",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 7 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.MayonnaiseMachine",
+		"Text": "MayonnaiseMachine.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 2 }
+		]
+	},
+	{
+		"Id": "mpsmfm.SteelMayonnaiseMachine",
+		"Recipe": "nachonline.mps_SteelMayonnaiseMachine",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.GoldMayonnaiseMachine",
+		"Recipe": "nachonline.mps_GoldMayonnaiseMachine",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondMayonnaiseMachine",
+		"Recipe": "nachonline.mps_DiamondMayonnaiseMachine",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumMayonnaiseMachine",
+		"Recipe": "nachonline.mps_IridiumMayonnaiseMachine",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveMayonnaiseMachine",
+		"Recipe": "nachonline.mps_RadioactiveMayonnaiseMachine",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticMayonnaiseMachine",
+		"Recipe": "nachonline.mps_PrismaticMayonnaiseMachine",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 2 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.MushroomLog",
+		"Text": "MushroomLog.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 4 }
+		]
+	},
+	{
+		"Id": "mpsmfm.GoldMushroomLog",
+		"Recipe": "nachonline.mps_GoldMushroomLog",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondMushroomLog",
+		"Recipe": "nachonline.mps_DiamondMushroomLog",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumMushroomLog",
+		"Recipe": "nachonline.mps_IridiumMushroomLog",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveMushroomLog",
+		"Recipe": "nachonline.mps_RadioactiveMushroomLog",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticMushroomLog",
+		"Recipe": "nachonline.mps_PrismaticMushroomLog",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.OilMaker",
+		"Text": "OilMaker.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 8 }
+		]
+	},
+	{
+		"Id": "mpsmfm.DiamondOilMaker",
+		"Recipe": "nachonline.mps_DiamondOilMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumOilMaker",
+		"Recipe": "nachonline.mps_IridiumOilMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveOilMaker",
+		"Recipe": "nachonline.mps_RadioactiveOilMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticOilMaker",
+		"Recipe": "nachonline.mps_PrismaticOilMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.OstrichIncubator",
+		"Text": "OstrichIncubator.letter",
+		"RecipeKnown": ["Ostrich Incubator"],
+	},
+	{
+		"Id": "mpsmfm.RadioactiveOstrichIncubator",
+		"Recipe": "nachonline.mps_RadioactiveOstrichIncubator",
+		"RecipeKnown": ["Ostrich Incubator"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticOstrichIncubator",
+		"Recipe": "nachonline.mps_PrismaticOstrichIncubator",
+		"RecipeKnown": ["Ostrich Incubator"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PreservesJar",
+		"Text": "PreservesJar.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 4 }
+		]
+	},
+	{
+		"Id": "mpsmfm.SteelPreservesJar",
+		"Recipe": "nachonline.mps_SteelPreservesJar",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.GoldPreservesJar",
+		"Recipe": "nachonline.mps_GoldPreservesJar",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondPreservesJar",
+		"Recipe": "nachonline.mps_DiamondPreservesJar",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumPreservesJar",
+		"Recipe": "nachonline.mps_IridiumPreservesJar",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactivePreservesJar",
+		"Recipe": "nachonline.mps_RadioactivePreservesJar",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticPreservesJar",
+		"Recipe": "nachonline.mps_PrismaticPreservesJar",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RecyclingMachine",
+		"Text": "RecyclingMachine.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 4 }
+		]
+	},
+	{
+		"Id": "mpsmfm.GoldRecyclingMachine",
+		"Recipe": "nachonline.mps_GoldRecyclingMachine",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondRecyclingMachine",
+		"Recipe": "nachonline.mps_DiamondRecyclingMachine",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumRecyclingMachine",
+		"Recipe": "nachonline.mps_IridiumRecyclingMachine",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveRecyclingMachine",
+		"Recipe": "nachonline.mps_RadioactiveRecyclingMachine",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticRecyclingMachine",
+		"Recipe": "nachonline.mps_PrismaticRecyclingMachine",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Fishing", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.SeedMaker",
+		"Text": "SeedMaker.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 9 }
+		]
+	},
+	{
+		"Id": "mpsmfm.IridiumSeedMaker",
+		"Recipe": "nachonline.mps_IridiumSeedMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 9 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveSeedMaker",
+		"Recipe": "nachonline.mps_RadioactiveSeedMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 9 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticSeedMaker",
+		"Recipe": "nachonline.mps_PrismaticSeedMaker",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Farming", "SkillLevel": 9 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.SlimeEggPress",
+		"Text": "SlimeEggPress.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Combat", "SkillLevel": 6 }
+		]
+	},
+	{
+		"Id": "mpsmfm.GoldSlimeEggPress",
+		"Recipe": "nachonline.mps_GoldSlimeEggPress",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Combat", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondSlimeEggPress",
+		"Recipe": "nachonline.mps_DiamondSlimeEggPress",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Combat", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumSlimeEggPress",
+		"Recipe": "nachonline.mps_IridiumSlimeEggPress",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Combat", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveSlimeEggPress",
+		"Recipe": "nachonline.mps_RadioactiveSlimeEggPress",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Combat", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticSlimeEggPress",
+		"Recipe": "nachonline.mps_PrismaticSlimeEggPress",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Combat", "SkillLevel": 6 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.SlimeIncubator",
+		"Text": "SlimeIncubator.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Combat", "SkillLevel": 8 }
+		]
+	},
+	{
+		"Id": "mpsmfm.RadioactiveSlimeIncubator",
+		"Recipe": "nachonline.mps_RadioactiveSlimeIncubator",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Combat", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticSlimeIncubator",
+		"Recipe": "nachonline.mps_PrismaticSlimeIncubator",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Combat", "SkillLevel": 8 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.SolarPanel",
+		"Text": "SolarPanel.letter",
+		"RecipeKnown": ["Solar Panel"],
+	},
+	{
+		"Id": "mpsmfm.IridiumSolarPanel",
+		"Recipe": "nachonline.mps_IridiumSolarPanel",
+		"RecipeKnown": ["Solar Panel"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.RadioactiveSolarPanel",
+		"Recipe": "nachonline.mps_RadioactiveSolarPanel",
+		"RecipeKnown": ["Solar Panel"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.PrismaticSolarPanel",
+		"Recipe": "nachonline.mps_PrismaticSolarPanel",
+		"RecipeKnown": ["Solar Panel"],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.Tapper",
+		"Text": "Tapper.letter",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 4 }
+		]
+	},
+	{
+		"Id": "mpsmfm.SteelTapper",
+		"Recipe": "nachonline.mps_SteelTapper",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.GoldTapper",
+		"Recipe": "nachonline.mps_GoldTapper",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.DiamondTapper",
+		"Recipe": "nachonline.mps_DiamondTapper",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+	{
+		"Id": "mpsmfm.IridiumTapper",
+		"Recipe": "nachonline.mps_IridiumTapper",
+		"SkillConditions": 
+		[
+			{ "SkillName": "Foraging", "SkillLevel": 4 }
+		],
+		"AutoOpen": true
+	},
+]

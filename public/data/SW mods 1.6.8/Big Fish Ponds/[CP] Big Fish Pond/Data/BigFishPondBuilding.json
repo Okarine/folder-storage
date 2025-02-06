@@ -1,0 +1,153 @@
+{
+  "Changes": [
+
+    {
+      "LogName": "Add Big Fish Pond Building",
+      "Action": "EditData",
+      "Target": "Data/Buildings",
+      "Entries": {
+        "{{ModId}}_BigFishPond": {
+          "ID": "{{ModId}}_BigFishPond",
+          "Name": "{{i18n: BigFishPond.Name}}",
+          "Description": "{{i18n: BigFishPond.Description}}",
+          "Texture": "Buildings/{{ModId}}_BigFishPond",
+          "Skins": [],
+          "DrawShadow": true,
+          "UpgradeSignTile": "3, 3",
+          "UpgradeSignHeight": 30.0,
+          "Size": {
+            "X": 5,
+            "Y": 5
+          },
+          "FadeWhenBehind": false,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": "StardewValley.Buildings.FishPond",
+          "Builder": "Robin",
+          "BuildCondition": "PLAYER_HAS_ACHIEVEMENT Any \"27\"", //Catch 100 fishes
+          "BuildDays": 2,
+          "BuildCost": 15000,
+          "BuildMaterials": [
+            {
+              "ItemId": "390", //stone
+              "Amount": 500
+            },
+            {
+              "ItemId": "337", //iridium bars
+              "Amount": 20
+            },
+            {
+              "ItemId": "SeaJelly",
+              "Amount": 10
+            },
+            {
+              "ItemId": "CaveJelly",
+              "Amount": 10
+            },
+            {
+              "ItemId": "RiverJelly",
+              "Amount": 10
+            }
+
+          ],
+          "BuildingToUpgrade": "Fish Pond",
+          "MagicalConstruction": false,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": null,
+          "AdditionalTilePropertyRadius": 0,
+          "AllowsFlooringUnderneath": false,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": null
+        }
+      }
+    },
+
+    {
+      "LogName": "Load Big Fish Pond texture",
+      "Action": "Load",
+      "Target": "Buildings/{{ModId}}_BigFishPond",
+      "FromFile": "Assets/BigFishPond.png"
+    },
+
+    {
+      "LogName": "Allowing vanilla Fish Pond to change into *construction site* during upgrading",
+      "Action": "EditData",
+      "Target": "Data/Buildings",
+      "TargetField": [ "Fish Pond" ],
+      "Entries": {
+        "UpgradeSignTile": "2, 1",
+        "UpgradeSignHeight": 15.0
+      }
+    },
+
+    //Add Mail when building is possible
+    {
+      "LogName": "Add mail data to mail entries",
+      "Action": "EditData",
+      "Target": "Data/Mail",
+      "Entries": {
+        "{{ModID}}_mail1": "Hey there!^I've heard from Willy that you've improved in fishing a lot since came here!^I thought I could support you in your fishy things so... I've came up with the bigger fish pond for you!^Check it out if you'll be nearby^   -Robin[#]Bigger Fish Ponds"
+      }
+    },
+    {
+      "LogName": "Add condition for sending mail",
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "BuildBFPPossible": {
+          "Id": "{{ModID}}_mail1",
+          "Trigger": "DayEnding",
+          "Condition": "PLAYER_HAS_ACHIEVEMENT Any \"27\"",
+          "HostOnly": false,
+          "Action": "AddMail All {{ModID}}_mail1"
+        }
+      }
+    }
+
+  ]
+}
