@@ -14,24 +14,26 @@ app.get('/files', (req, res) => {
             return res.status(500).json({ message: 'Error reading directory' });
         }
 
-        // Формирование списка файлов и папок
         const fileList = files.map(file => ({
             name: file.name,
             path: path.join(req.query.path || '', file.name),
             isDirectory: file.isDirectory()
         }));
 
-        console.log('Files in directory: ', dir, fileList);
         res.json(fileList);
     });
 });
 
-/* app.get('/', (req, res) => {
-    res.send('Hello world!');
-}); */
+app.get('/file', (req, res) => {
+    const filePath = path.join(baseDir, req.query.path);
+    res.sendFile(filePath);
+});
+
+app.use(express.static(baseDir));
 
 app.get('/', (req, res) => {
-    res.send('Hello world! Go to <a href="/files">/files</a> to see the list of files.');
+    //res.send('Hello world! Go to <a href="/files">/files</a> to see the list of files.');
+    res.sendFile(__dirname + '/index.html')
 });
 
 // Запуск сервера

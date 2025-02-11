@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Viewer</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .file { margin: 10px 0; }
+        .folder { font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Repository Viewer</h1>
+    <div id="fileList"></div>
+
+    <script>
+        async function fetchFiles() {
+            const response = await fetch('/files');
+            const files = await response.json();
+            const fileList = document.getElementById('fileList');
+            fileList.innerHTML = '';
+
+            files.forEach(file => {
+                const fileElement = document.createElement('div');
+                fileElement.className = 'file';
+
+                if (file.isDirectory) {
+                    fileElement.classList.add('folder');
+                    fileElement.textContent = `📁 ${file.name}`;
+                } else {
+                    fileElement.textContent = `📄 ${file.name}`;
+                    fileElement.addEventListener('click', () => {
+                        window.open(`/file/${file.name}`, '_blank');
+                    });
+                }
+
+                fileList.appendChild(fileElement);
+            });
+        }
+
+        fetchFiles();
+    </script>
+
+</body>
+</html>
