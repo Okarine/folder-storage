@@ -6,12 +6,15 @@ const port = 3000;
 
 const baseDir = path.join(__dirname, '../public/data/SW mods 1.6.8');
 
-app.get('/files', (req, res) => {
-    const dir = path.join(baseDir, req.query.path || '');
-
-    fs.readdir(dir, { withFileTypes: true }, (err, files) => {
+// Маршрут для отображения главной страницы и передачи списка папок
+app.get('/', (req, res) => {
+    // Читаем HTML-шаблон
+    const indexFile = path.join(__dirname, 'index.html');
+    
+    // Читаем содержимое директории
+    fs.readdir(baseDir, { withFileTypes: true }, (err, files) => {
         if (err) {
-            return res.status(500).json({ message: 'Error reading directory' });
+            return res.status(500).send('Error reading directory');
         }
 
         const fileList = files.map(file => ({
@@ -20,21 +23,25 @@ app.get('/files', (req, res) => {
             isDirectory: file.isDirectory()
         }));
 
-        res.json(fileList);
+        // Читаем HTML-файл и встраиваем туда переменную с JSON-данными
+        fs.readFile(indexFile, 'utf8', (err, htmlData) => {
+            if (err) {
+                return res.status(500).send('Error reading HTML file');
+            }
+
+            // Встраиваем JSON прямо в HTML как глобальную переменную
+            const modifiedHtml = htmlData.replace(
+                '<!-- FOLDER_LIST_PLACEHOLDER -->',
+                `<script>const fileList = ${JSON.stringify(fileList)};</script>`
+            );
+
+            res.send(modifiedHtml);
+        });
     });
 });
 
-app.get('/file', (req, res) => {
-    const filePath = path.join(baseDir, req.query.path);
-    res.sendFile(filePath);
-});
-
-app.use(express.static(baseDir));
-
-app.get('/', (req, res) => {
-    //res.send('Hello world! Go to <a href="/files">/files</a> to see the list of files.');
-    res.sendFile(__dirname + '/index.html')
-});
+// Статическая отдача файлов (если нужно для других файлов, например стилей)
+app.use(express.static(__dirname));
 
 // Запуск сервера
 app.listen(port, () => {

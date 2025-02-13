@@ -3,45 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repository Viewer</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .file { margin: 10px 0; }
-        .folder { font-weight: bold; }
-    </style>
+    <title>Folder List</title>
 </head>
 <body>
+    <h1>Folder List</h1>
+    <div id="folder-list"></div>
 
-    <h1>Repository Viewer</h1>
-    <div id="fileList"></div>
-
+    <!-- FOLDER_LIST_PLACEHOLDER -->
+    
     <script>
-        async function fetchFiles() {
-            const response = await fetch('/files');
-            const files = await response.json();
-            const fileList = document.getElementById('fileList');
-            fileList.innerHTML = '';
+        // Используем глобальную переменную fileList для отображения списка папок
+        const folderListElement = document.getElementById('folder-list');
 
-            files.forEach(file => {
-                const fileElement = document.createElement('div');
-                fileElement.className = 'file';
+        fileList.forEach(file => {
+            const listItem = document.createElement('div');
+            
+            if (file.isDirectory) {
+                listItem.textContent = `📁` + file.name;
+            } else {
+                listItem.textContent = `📄` + file.name
+            }
 
-                if (file.isDirectory) {
-                    fileElement.classList.add('folder');
-                    fileElement.textContent = `📁 ${file.name}`;
-                } else {
-                    fileElement.textContent = `📄 ${file.name}`;
-                    fileElement.addEventListener('click', () => {
-                        window.open(`/file/${file.name}`, '_blank');
-                    });
-                }
-
-                fileList.appendChild(fileElement);
-            });
-        }
-
-        fetchFiles();
+            folderListElement.appendChild(listItem);
+        });
     </script>
-
 </body>
 </html>
+
