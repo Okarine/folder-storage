@@ -7,25 +7,64 @@
 </head>
 <body>
     <h1>Folder List</h1>
+    <nav id="breadcrumbs"></nav>
     <div id="folder-list"></div>
 
     <!-- FOLDER_LIST_PLACEHOLDER -->
     
     <script>
-        // Используем глобальную переменную fileList для отображения списка папок
         const folderListElement = document.getElementById('folder-list');
+        const breadcrumbsElement = document.getElementById('breadcrumbs');
 
-        fileList.forEach(file => {
-            const listItem = document.createElement('div');
-            
-            if (file.isDirectory) {
-                listItem.textContent = `📁` + file.name;
-            } else {
-                listItem.textContent = `📄` + file.name
-            }
+        function renderBreadcrumbs() {
+            const pathParts = window.location.pathname.split('/').filter(Boolean);
+            let accumulatedPath = '/';
 
-            folderListElement.appendChild(listItem);
-        });
+            // Clearing the breadcrumb element before rendering
+            breadcrumbsElement.innerHTML = '';
+
+            // Add a link to the root directory
+            const rootCrumb = document.createElement('a');
+            rootCrumb.href = '/';
+            rootCrumb.textContent = '/';
+            breadcrumbsElement.appendChild(rootCrumb);
+
+            // We build breadcrumbs for each segment of the path
+            pathParts.forEach((part, index) => {
+                accumulatedPath += encodeURIComponent(part) + '/'
+
+                const crumb = document.createElement('a');
+                crumb.href = accumulatedPath;
+                crumb.textContent = part;
+
+                breadcrumbsElement.appendChild(crumb);
+                breadcrumbsElement.appendChild(document.createTextNode(' / '));
+            });
+
+        }
+
+        function renderFileList(fileList) {
+            folderListElement.innerHTML = '';   
+
+            fileList.forEach(file => {
+                const listItem = document.createElement('div');
+
+                const a = document.createElement('a')
+                a.href = `${window.location.pathname}${encodeURIComponent(file.path)}/`;
+
+                if (file.isDirectory) {
+                    a.textContent = `📁` + file.name;
+                } else {
+                    a.textContent = `📄` + file.name
+                }
+
+                listItem.appendChild(a);
+                folderListElement.appendChild(listItem);
+            });
+        }
+
+        renderBreadcrumbs();
+        renderFileList(fileList);
     </script>
 </body>
 </html>
