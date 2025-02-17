@@ -8,6 +8,7 @@
 <body>
     <h1>Folder List</h1>
     <nav id="breadcrumbs"></nav>
+    <input type="text" id="search-input" placeholder="Search">
     <button id="up-button" style="display: none;">⬆️ UP</button>
     <div id="folder-list"></div>
 
@@ -17,6 +18,7 @@
         const folderListElement = document.getElementById('folder-list');
         const breadcrumbsElement = document.getElementById('breadcrumbs');
         const upButton = document.getElementById('up-button');
+        const searchInput = document.getElementById('search-input');
 
         function renderUpButton() {
             const currentPath = window.location.pathname;
@@ -68,9 +70,10 @@
 
         function renderFileList(fileList) {
             folderListElement.innerHTML = '';   
-
+            
             fileList.forEach(file => {
                 const listItem = document.createElement('div');
+                listItem.style.display = 'block';
                 const a = document.createElement('a')
                 
                 if (file.isDirectory) {
@@ -85,6 +88,24 @@
                 listItem.appendChild(a);
                 folderListElement.appendChild(listItem);
             });
+        }
+
+        searchInput.oninput = function () {
+            let val = this.value.trim().toLowerCase();
+            let filteredItems = document.querySelectorAll('#folder-list div');
+            if (val != '') {
+                filteredItems.forEach(function (elem) {
+                    if (elem.innerText.search(val) == -1) {
+                        elem.style.display = 'none';
+                    } else {
+                        elem.style.display = 'block';
+                    }
+                });
+            } else {
+                filteredItems.forEach(function (elem) {
+                    elem.style.display = 'block';
+                });
+            }
         }
 
         renderUpButton();

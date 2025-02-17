@@ -58,6 +58,7 @@ app.get('/*', (req, res) => {
         if (stats.isDirectory()) {
             renderDirectory(dirPath, res);
         } else { 
+            // Download if it's file
             res.download(dirPath, err => {
                 if(err) {
                     res.status(500).send('Error downloading file');
