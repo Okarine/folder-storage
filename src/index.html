@@ -8,7 +8,7 @@
 <body>
     <h1>Folder List</h1>
     <nav id="breadcrumbs"></nav>
-    <button id="up-button" style="display: none;">⬆️</button>
+    <button id="up-button" style="display: none;">⬆️ UP</button>
     <div id="folder-list"></div>
 
     <!-- FOLDER_LIST_PLACEHOLDER -->
@@ -71,13 +71,14 @@
 
             fileList.forEach(file => {
                 const listItem = document.createElement('div');
-
                 const a = document.createElement('a')
-                a.href = `${window.location.pathname}${encodeURIComponent(file.path)}/`;
-
+                
                 if (file.isDirectory) {
+                    a.href = `${window.location.pathname}${encodeURIComponent(file.path)}/`;
                     a.textContent = `📁` + file.name;
                 } else {
+                    a.href = `${window.location.pathname}${encodeURIComponent(file.path)}`;
+                    a.download = file.name;
                     a.textContent = `📄` + file.name
                 }
 

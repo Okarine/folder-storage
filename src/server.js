@@ -4,9 +4,9 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-const baseDir = path.join(__dirname, '../public/data/SW mods 1.6.8');
+const baseDir = path.join(__dirname, '../public/data/SW mods 1.6.8'); //'../public/data/SW mods 1.6.8'
 
-function renderDirPage(dirPath, res) {
+function renderDirectory(dirPath, res) {
     // Reading the HTML template
     const indexFile = path.join(__dirname, 'index.html');
 
@@ -40,7 +40,7 @@ function renderDirPage(dirPath, res) {
 
 // Route for the main page (root folder)
 app.get('/', (req, res) => {
-    renderDirPage(baseDir, res);
+    renderDirectory(baseDir, res);
 });
 
 // Dynamic route for folders
@@ -48,13 +48,22 @@ app.get('/*', (req, res) => {
     const relativePath = req.params[0]; // Extracting the path from the route parameter
     const dirPath = path.join(baseDir, relativePath);
 
-    // Checking if a path exists
     fs.stat(dirPath, (err, stats) => {
-        if (err || !stats.isDirectory()) {
-            return res.status(404).send('Directory not found');
+        // Checking is folder or file exists
+        if(err) {
+            return res.status(404).send('Directory or file not found');
         }
 
-        renderDirPage(dirPath, res);
+        // If it's folder, display content
+        if (stats.isDirectory()) {
+            renderDirectory(dirPath, res);
+        } else { 
+            res.download(dirPath, err => {
+                if(err) {
+                    res.status(500).send('Error downloading file');
+                }
+            })
+        }
     });
 })
 
