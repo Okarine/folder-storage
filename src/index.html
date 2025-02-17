@@ -6,16 +6,28 @@
     <title>Folder List</title>
 </head>
 <body>
-    <h1>Folder List</h1>
+    <h2>Folder List</h2>
     <nav id="breadcrumbs"></nav>
+
     <input type="text" id="search-input" placeholder="Search">
+
     <button id="up-button" style="display: none;">⬆️ UP</button>
-    <div id="folder-list"></div>
+
+    <table id="folder-list">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Modified</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 
     <!-- FOLDER_LIST_PLACEHOLDER -->
     
     <script>
-        const folderListElement = document.getElementById('folder-list');
+        const folderListElement = document.querySelector('#folder-list tbody');
         const breadcrumbsElement = document.getElementById('breadcrumbs');
         const upButton = document.getElementById('up-button');
         const searchInput = document.getElementById('search-input');
@@ -68,12 +80,22 @@
 
         }
 
+        function formatFileSize(size) {
+            if (size === null) return '';
+            const i = Math.floor(Math.log(size) / Math.log(1024));
+            return (size / Math.pow(1024, i)).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
+        }
+
         function renderFileList(fileList) {
             folderListElement.innerHTML = '';   
             
             fileList.forEach(file => {
-                const listItem = document.createElement('div');
-                listItem.style.display = 'block';
+                const row = document.createElement('tr');
+
+                const nameCell = document.createElement('td');
+                const sizeCell = document.createElement('td');
+                const lastModifiedCell = document.createElement('td');
+
                 const a = document.createElement('a')
                 
                 if (file.isDirectory) {
@@ -85,27 +107,34 @@
                     a.textContent = `📄` + file.name
                 }
 
-                listItem.appendChild(a);
-                folderListElement.appendChild(listItem);
+                nameCell.appendChild(a);
+                sizeCell.textContent = formatFileSize(file.size);
+                lastModifiedCell.textContent = new Date(file.lastModified).toLocaleString();
+
+                row.appendChild(nameCell);
+                row.appendChild(sizeCell);
+                row.appendChild(lastModifiedCell);
+                folderListElement.appendChild(row);
             });
         }
 
         searchInput.oninput = function () {
             let val = this.value.trim().toLowerCase();
-            let filteredItems = document.querySelectorAll('#folder-list div');
-            if (val != '') {
-                filteredItems.forEach(function (elem) {
-                    if (elem.innerText.search(val) == -1) {
-                        elem.style.display = 'none';
+            let tableRows = document.querySelectorAll('#folder-list tbody tr');
+            
+            tableRows.forEach(function (row) {
+                const rowText = row.textContent.toLowerCase();
+                
+                if (val !== '') {
+                    if (rowText.includes(val)) {
+                        row.style.display = 'table-row';
                     } else {
-                        elem.style.display = 'block';
+                        row.style.display = 'none';
                     }
-                });
-            } else {
-                filteredItems.forEach(function (elem) {
-                    elem.style.display = 'block';
-                });
-            }
+                } else {
+                    row.style.display = 'table-row';
+                }
+            });
         }
 
         renderUpButton();

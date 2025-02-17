@@ -16,11 +16,19 @@ function renderDirectory(dirPath, res) {
             return res.status(500).send('Error reading directory');
         }
 
-        const fileList = files.map(file => ({
-            name: file.name,
-            path: path.join(file.name),
-            isDirectory: file.isDirectory()
-        }));
+        const fileList = files.map(file => {
+            const filePath = path.join(dirPath, file.name);
+            const stats = fs.statSync(filePath);
+
+            return {
+                name: file.name,
+                path: path.join(file.name),
+                isDirectory: file.isDirectory(),
+                size: file.isDirectory() ? null : stats.size,
+                lastModified: stats.mtime
+            }
+        });
+
         // We read the HTML file and embed a variable with JSON data into it
         fs.readFile(indexFile, 'utf8', (err, htmlData) => {
             if (err) {
