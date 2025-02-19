@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folder list</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Folder path</h1>
+        <div id="breadcrumbs"></div>
+    </header>
+
+    <input type="text" id="search-input" placeholder="Search">
+
+    <button id="up-button" style="display: none;">⬆️ UP</button>
+
+    <table id="folder-list">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Modified</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <!-- FOLDER_LIST_PLACEHOLDER -->
+    
+    <script>
+        const folderListElement = document.querySelector('#folder-list tbody');
+        const breadcrumbsElement = document.getElementById('breadcrumbs');
+        const upButton = document.getElementById('up-button');
+        const searchInput = document.getElementById('search-input');
+
+        function renderUpButton() {
+            const currentPath = window.location.pathname;
+
+            if (currentPath !== '/') {
+                upButton.style.display = 'block';
+            } else {
+                upButton.style.display = 'none';
+            }
+
+            upButton.onclick = function() {
+                const pathParts = currentPath.split('/').filter(Boolean);
+
+                if (pathParts.length > 1) {
+                    const newPath = '/' + pathParts.slice(0, -1).join('/') + '/';
+                    window.location.href = newPath;
+                } else {
+                    window.location.href = '/';
+                }
+            }
+        }
+
+        function renderBreadcrumbs() {
+            const pathParts = window.location.pathname.split('/').filter(Boolean);
+            let accumulatedPath = '/';
+
+            // Clearing the breadcrumb element before rendering
+            breadcrumbsElement.innerHTML = '';
+
+            // Add a link to the root directory
+            const rootCrumb = document.createElement('a');
+            rootCrumb.href = '/';
+            rootCrumb.textContent = '/';
+            breadcrumbsElement.appendChild(rootCrumb);
+
+            // We build breadcrumbs for each segment of the path
+            pathParts.forEach((part, index) => {
+                accumulatedPath += encodeURIComponent(part) + '/'
+
+                const crumb = document.createElement('a');
+                crumb.href = accumulatedPath;
+                crumb.textContent = part;
+
+                breadcrumbsElement.appendChild(crumb);
+                breadcrumbsElement.appendChild(document.createTextNode(' / '));
+            });
+
+        }
+
+        function formatFileSize(size) {
+            if (size === null) return '';
+            const i = Math.floor(Math.log(size) / Math.log(1024));
+            return (size / Math.pow(1024, i)).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
+        }
+
+        function renderFileList(fileList) {
+            folderListElement.innerHTML = '';   
+            
+            fileList.forEach(file => {
+                const row = document.createElement('tr');
+
+                const nameCell = document.createElement('td');
+                const sizeCell = document.createElement('td');
+                const lastModifiedCell = document.createElement('td');
+
+                const a = document.createElement('a')
+                
+                if (file.isDirectory) {
+                    a.href = `${window.location.pathname}${encodeURIComponent(file.path)}/`;
+                    a.textContent = `📁` + file.name;
+                } else {
+                    a.href = `${window.location.pathname}${encodeURIComponent(file.path)}`;
+                    a.download = file.name;
+                    a.textContent = `📄` + file.name
+                }
+
+                nameCell.appendChild(a);
+                sizeCell.textContent = formatFileSize(file.size);
+                lastModifiedCell.textContent = new Date(file.lastModified).toLocaleString();
+
+                row.appendChild(nameCell);
+                row.appendChild(sizeCell);
+                row.appendChild(lastModifiedCell);
+                folderListElement.appendChild(row);
+            });
+        }
+
+        searchInput.oninput = function () {
+            let val = this.value.trim().toLowerCase();
+            let tableRows = document.querySelectorAll('#folder-list tbody tr');
+            
+            tableRows.forEach(function (row) {
+                const rowText = row.textContent.toLowerCase();
+                
+                if (val !== '') {
+                    if (rowText.includes(val)) {
+                        row.style.display = 'table-row';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                } else {
+                    row.style.display = 'table-row';
+                }
+            });
+        }
+
+        renderUpButton();
+        renderBreadcrumbs();
+        renderFileList(fileList);
+    </script>
+</body>
+</html>
+
