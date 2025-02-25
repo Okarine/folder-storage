@@ -6,26 +6,57 @@
     <title>Folder list</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <header>
-        <h1>Folder path</h1>
-        <div id="breadcrumbs"></div>
-    </header>
+<body class="bg-gray-950">
+    <header class="bg-gray-900 p-3">
+        <div class="max-w-screen-lg mx-auto">
+            <h1 class="text-xs uppercase text-gray-500 pb-1.5">Folder path</h1>
+            <div id="breadcrumbs" class="text-lg text-gray-400"></div>
+        </div>
+    </header> 
 
-    <input type="text" id="search-input" placeholder="Search">
-
-    <button id="up-button" style="display: none;">⬆️ UP</button>
-
-    <table id="folder-list">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Size</th>
-                <th>Modified</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="relative overflow-x-auto max-w-screen-lg mx-auto mt-10">
+        <table id="folder-list" class="w-full text-sm text-left rtl:text-right text-gray-400">
+            <thead class="text-xs uppercase bg-gray-800 text-gray-200">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        <div class="flex items-center">
+                            <span>Name</span>
+                            <form class="max-w-xs ms-6">
+                                <label for="search-input" class="mb-2 text-sm font-normal sr-only text-gray-200">Search</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                        <svg class="w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                        </svg>
+                                    </div>
+                                    <input type="text" id="search-input" class="block w-full p-2 ps-10 text-sm font-normal text-gray-200 border border-gray-600 rounded-lg bg-gray-700 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 " placeholder="Search">
+                                </div>
+                            </form>
+                        </div>
+                    </th>
+                    <th scope="col" class="px-6 py-3">Size</th>
+                    <th scope="col" class="px-6 py-3">Modified</th>
+                </tr>
+                <tr id="up-button" style="display: none;" class="border-b bg-gray-900 border-gray-700 cursor-pointer hover:bg-gray-800">
+                    <th class="px-6 py-4 font-medium text-gray-200 whitespace-nowrap">
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none">
+                                <svg class="w-6 h-6 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
+                                </svg>
+                            </div>
+                            <span class="block w-full ps-6 px-0.5 text-xs text-gray-400">Up</span>
+                        </div>
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
 
     <!-- FOLDER_LIST_PLACEHOLDER -->
     
@@ -39,7 +70,7 @@
             const currentPath = window.location.pathname;
 
             if (currentPath !== '/') {
-                upButton.style.display = 'block';
+                upButton.style.display = 'table-row';
             } else {
                 upButton.style.display = 'none';
             }
@@ -65,8 +96,8 @@
 
             // Add a link to the root directory
             const rootCrumb = document.createElement('a');
-            rootCrumb.href = '/';
-            rootCrumb.textContent = '/';
+            rootCrumb.href = '/ ';
+            rootCrumb.textContent = '/ ';
             breadcrumbsElement.appendChild(rootCrumb);
 
             // We build breadcrumbs for each segment of the path
@@ -94,30 +125,35 @@
             
             fileList.forEach(file => {
                 const row = document.createElement('tr');
+                row.classList.add('border-b', 'bg-gray-900', 'border-gray-700', 'hover:bg-gray-800', 'cursor-pointer');
 
-                const nameCell = document.createElement('td');
+                const nameCell = document.createElement('th');
+                nameCell.setAttribute('scope', 'row');
+                nameCell.classList.add('px-6', 'py-4', 'font-medium', 'text-gray-400', 'whitespace-nowrap')
+
                 const sizeCell = document.createElement('td');
+                sizeCell.classList.add('px-6', 'py-4')
+
                 const lastModifiedCell = document.createElement('td');
+                lastModifiedCell.classList.add('px-6', 'py-4')
 
-                const a = document.createElement('a')
-                
-                if (file.isDirectory) {
-                    a.href = `${window.location.pathname}${encodeURIComponent(file.path)}/`;
-                    a.textContent = `📁` + file.name;
-                } else {
-                    a.href = `${window.location.pathname}${encodeURIComponent(file.path)}`;
-                    a.download = file.name;
-                    a.textContent = `📄` + file.name
-                }
-
-                nameCell.appendChild(a);
+                nameCell.textContent = file.isDirectory ? `📁 ${file.name}` : `📄 ${file.name}`;
                 sizeCell.textContent = formatFileSize(file.size);
                 lastModifiedCell.textContent = new Date(file.lastModified).toLocaleString();
-
+                
                 row.appendChild(nameCell);
                 row.appendChild(sizeCell);
                 row.appendChild(lastModifiedCell);
                 folderListElement.appendChild(row);
+
+                row.addEventListener(`click`, () => {
+                    if (file.isDirectory) {
+                        window.location.href = `${window.location.pathname}${encodeURIComponent(file.path)}/`;
+                    } else {
+                        window.location.href = `${window.location.pathname}${encodeURIComponent(file.path)}`;
+                        // a.download = file.name;
+                    }
+                });
             });
         }
 
