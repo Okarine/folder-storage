@@ -2,10 +2,10 @@
 
 ### Changing the working repository
 
-To use your test repository, you need to place it in the path `FolderStorage/public/data/`. 
-Also make changes to the file `src/server.js`. In line 7, change the directory name to your own.
+To use your test repository, you need to place your folder in the root folder of the project. 
+Also make changes to the file `src/server.js`. In line 7, change the repository name to your own.
 
-`const baseDir = path.join(__dirname, '../public/data/your_dir');`
+`const baseDir = path.join(__dirname, '../your_rep');`
 
 ### Launching the application
 

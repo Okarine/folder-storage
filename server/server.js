@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-const baseDir = path.join(__dirname, '../data/SW mods 1.6.8'); //'./data/your_dir'
+const baseDir = path.join(__dirname, '../data'); //'../your_rep'
 
 function renderDirectory(dirPath, res) {
     // Reading the HTML template

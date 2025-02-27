@@ -146,12 +146,12 @@
                 row.appendChild(lastModifiedCell);
                 folderListElement.appendChild(row);
 
+                //links generations
                 row.addEventListener(`click`, () => {
                     if (file.isDirectory) {
                         window.location.href = `${window.location.pathname}${encodeURIComponent(file.path)}/`;
                     } else {
                         window.location.href = `${window.location.pathname}${encodeURIComponent(file.path)}`;
-                        // a.download = file.name;
                     }
                 });
             });
