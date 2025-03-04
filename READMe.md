@@ -80,6 +80,6 @@ After downloading, install via the regular installer.
 
 ## Used technologies 
 
--**backend:** [Node.js](https://nodejs.org/en), [Express](https://expressjs.com/) web framework
+- **backend:** [Node.js](https://nodejs.org/en), [Express](https://expressjs.com/) web framework
 
--**frontend:** Javascript, [TailwindCSS](https://tailwindcss.com/)
+- **frontend:** Javascript, [TailwindCSS](https://tailwindcss.com/)
