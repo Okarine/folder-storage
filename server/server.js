@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-const baseDir = path.join(__dirname, '../data'); //'../your_rep'
+const baseDir = path.join(__dirname, '../data'); 
 
 function renderDirectory(dirPath, res) {
     // Reading the HTML template
@@ -46,6 +46,8 @@ function renderDirectory(dirPath, res) {
     });
 }
 
+app.set('trust proxy', true);
+
 app.use(express.static('public'));
 
 // Route for the main page (root folder)
@@ -61,7 +63,7 @@ app.get('/*', (req, res) => {
     fs.stat(dirPath, (err, stats) => {
         // Checking is folder or file exists
         if(err) {
-            return res.status(404).send('Directory or file not found');
+            return !res.headersSent && res.status(404).send('Directory or file not found');
         }
 
         // If it's folder, display content
@@ -70,7 +72,7 @@ app.get('/*', (req, res) => {
         } else { 
             // Download if it's file
             res.download(dirPath, err => {
-                if(err) {
+                if(err && !res.headersSent) {
                     res.status(500).send('Error downloading file');
                 }
             })
