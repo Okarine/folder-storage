@@ -19,15 +19,19 @@ The key goal is to display the information repository in web format. Essentially
 ## Features
 
 - **List of files** 
+
     The app displays a list of various files and folders in a list format. The list also contains information about the last modification and size of the files.
 
 - **Breadcrumbs**
+
     A convenient navigation function has been implemented, allowing you to quickly move between repositories. When you go to any directory except the root directory, the button to return to the parent directory also becomes available.
 
 - **Search input**
+
     A search system is enabled that provides filtering of files located in the current directory.
 
 - **Download option**
+
     Downloading is possible for text files, images, zip folders, etc. You can do this by clicking on the name.
 
 ## Installation
@@ -38,7 +42,7 @@ To use file storage for your purposes, please remember to put your files inside 
 
 ### Launching the application
 
-1. To run the project, you need to install node.js. You can do this on the [official website](https://nodejs.org/en/).Recommended version LTS. 
+1. To run the project, you need to install node.js. You can do this on the [official website](https://nodejs.org/en/). Recommended version is LTS. 
 After downloading, install via the regular installer.
 
 2. In the terminal check the node version
@@ -76,5 +80,6 @@ After downloading, install via the regular installer.
 
 ## Used technologies 
 
--*backend:* [Node.js](https://nodejs.org/en), [Express](https://expressjs.com/) web framework
--*frontend:* Javascript, [TailwindCSS](https://tailwindcss.com/)
+-**backend:** [Node.js](https://nodejs.org/en), [Express](https://expressjs.com/) web framework
+
+-**frontend:** Javascript, [TailwindCSS](https://tailwindcss.com/)
